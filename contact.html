@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Get In Touch | CWC_UK</title>
+    <meta name="description" content="Contact CWC_UK for GCSE and A-Level Computer Science tutoring. Book your free consultation today. Response within 24 hours.">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #134270;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="font-weight: 900; color: white;">
+                CODE<span style="color: #E08245;">WITH</span>CONFIDENCE_UK
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="how-it-works.html">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-cta" href="contact.html">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-5" style="background: linear-gradient(135deg, #134270 0%, #1a5280 100%);">
+        <div class="container">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bold mb-3">Get In Touch</h1>
+                <p class="lead mb-0">Questions? Ready to book? I'd love to hear from you!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                
+                <!-- Contact Form -->
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h3 class="mb-3" style="color: #134270; font-weight: 900;">Send Me a Message</h3>
+                            <p class="text-muted mb-4">I'll get back to you within 24 hours!</p>
+                            <form action="https://formspree.io/f/maqdblkw" method="POST">
+                                <div class="row g-3">
+                                  <div class="col-md-6">
+                                    <label for="name" class="form-label fw-bold">Name *</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                  </div>
+                              
+                                  <div class="col-md-6">
+                                    <label for="email" class="form-label fw-bold">Email *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                  </div>
+                              
+                                  <div class="col-12">
+                                    <label for="phone" class="form-label fw-bold">Phone (Optional)</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone">
+                                  </div>
+                              
+                                  <div class="col-md-6">
+                                    <label for="interest" class="form-label fw-bold">I'm interested in *</label>
+                                    <select class="form-select" id="interest" name="interest" required>
+                                      <option value="">Choose...</option>
+                                      <option value="gcse">GCSE Tutoring</option>
+                                      <option value="alevel">A-Level Tutoring</option>
+                                      <option value="exam">Exam Prep</option>
+                                      <option value="nea">NEA/Coursework Help</option>
+                                      <option value="question">Just have a question</option>
+                                    </select>
+                                  </div>
+                              
+                                  <div class="col-md-6">
+                                    <label for="examBoard" class="form-label fw-bold">Exam Board</label>
+                                    <select class="form-select" id="examBoard" name="examBoard">
+                                      <option value="">Choose...</option>
+                                      <option value="ocr">OCR</option>
+                                      <option value="aqa">AQA</option>
+                                      <option value="pearson">Pearson/Edexcel</option>
+                                      <option value="notsure">Not sure</option>
+                                    </select>
+                                  </div>
+                              
+                                  <!-- Honeypot (spam trap) -->
+                                  <input type="text" name="website" id="website" class="d-none" tabindex="-1" autocomplete="off">
+                              
+                                  <div class="col-md-6">
+                                    <label for="currentGrade" class="form-label fw-bold">Current Grade</label>
+                                    <select class="form-select" id="currentGrade" name="currentGrade">
+                                      <option value="">Choose...</option>
+                                      <option value="gcse1-3">GCSE Working towards (1-3)</option>
+                                      <option value="gcse4-5">GCSE Grade 4-5</option>
+                                      <option value="gcse6-7">GCSE Grade 6-7</option>
+                                      <option value="gcse8-9">GCSE Grade 8-9</option>
+                                      <option value="alevel-de">A-Level D/E</option>
+                                      <option value="alevel-c">A-Level C</option>
+                                      <option value="alevel-b">A-Level B</option>
+                                      <option value="alevel-a">A-Level A/A*</option>
+                                      <option value="notstarted">Haven't started yet</option>
+                                    </select>
+                                  </div>
+                              
+                                  <div class="col-md-6">
+                                    <label for="targetGrade" class="form-label fw-bold">Target Grade</label>
+                                    <select class="form-select" id="targetGrade" name="targetGrade">
+                                      <option value="">Choose...</option>
+                                      <option value="gcse4-5">GCSE Grade 4-5</option>
+                                      <option value="gcse6-7">GCSE Grade 6-7</option>
+                                      <option value="gcse8-9">GCSE Grade 8-9</option>
+                                      <option value="alevel-c">A-Level C</option>
+                                      <option value="alevel-b">A-Level B</option>
+                                      <option value="alevel-a">A-Level A/A*</option>
+                                    </select>
+                                  </div>
+                              
+                                  <div class="col-12">
+                                    <label for="message" class="form-label fw-bold">Message *</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5"
+                                      placeholder="Tell me what you're struggling with or what you'd like to achieve..." required></textarea>
+                                  </div>
+                              
+                                  <!-- Optional: makes Formspree emails nicer -->
+                                  <input type="hidden" name="_subject" value="New enquiry from CWC_UK contact form">
+                                  <!-- Optional: redirect after submit (change to your real thank-you page if you create one) -->
+                                  <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html"> -->
+                              
+                                  <div class="col-12">
+                                    <button type="submit" class="btn btn-primary-custom w-100 py-3">
+                                      <i class="bi bi-send me-2"></i>Send Message
+                                    </button>
+                                  </div>
+                                </div>
+                              </form>
+                              
+                            
+                            <div class="alert mt-4 mb-0" style="background-color: rgba(120, 186, 220, 0.1); border: 1px solid rgba(120, 186, 220, 0.3); color: #134270;">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-shield-check fs-4 me-3" style="color: #E08245;"></i>
+                                    <div>
+                                        <strong>Your information is safe.</strong> I'll reply within 24 hours and won't share your details.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info Sidebar -->
+                <div class="col-lg-5">
+                    
+                    <!-- Contact Details -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4" style="color: #134270; font-weight: 900;">Contact Information</h4>
+                            
+                            <div class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-envelope-fill fs-4 me-3" style="color: #E08245;"></i>
+                                <div>
+                                    <strong class="d-block mb-1">Email</strong>
+                                    <a href="mailto:contact@cwclearning.net" style="color: #134270;">contact@cwclearning.net</a>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-instagram fs-4 me-3" style="color: #E08245;"></i>
+                                <div>
+                                    <strong class="d-block mb-1">Instagram</strong>
+                                    <a href="#" style="color: #134270;">@codewithconfidence_uk</a>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-geo-alt-fill fs-4 me-3" style="color: #E08245;"></i>
+                                <div>
+                                    <strong class="d-block mb-1">Location</strong>
+                                    <span class="text-muted">Online (UK-wide)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-clock-fill fs-4 me-3" style="color: #E08245;"></i>
+                                <div>
+                                    <strong class="d-block mb-1">Response Time</strong>
+                                    <span class="text-muted">Within 24 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Contact -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h5 class="mb-3" style="color: #134270; font-weight: 900;">Prefer Direct Message?</h5>
+                            <div class="d-grid gap-2">
+                                <a href="#" class="btn btn-outline-primary">
+                                    <i class="bi bi-instagram me-2"></i>Instagram DM
+                                </a>
+                                <a href="mailto:contact@cwclearning.net" class="btn btn-outline-primary">
+                                    <i class="bi bi-envelope me-2"></i>Email Me
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- What's Next -->
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="mb-3" style="color: #134270; font-weight: 900;">What Happens Next?</h5>
+                            <ol class="mb-0 ps-3">
+                                <li class="mb-2">I'll read your message</li>
+                                <li class="mb-2">I'll reply within 24 hours</li>
+                                <li class="mb-2">We'll schedule your free consultation</li>
+                                <li class="mb-0">You'll be on your way to better grades!</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Availability Section -->
+    <section class="py-5" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4" style="color: #134270;">When I'm Available</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="row text-center g-4">
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <i class="bi bi-sun fs-1" style="color: #E08245;"></i>
+                                    </div>
+                                    <h5 class="fw-bold" style="color: #134270;">Weekday Evenings</h5>
+                                    <p class="mb-0 text-muted">5pm - 9pm</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <i class="bi bi-calendar-check fs-1" style="color: #E08245;"></i>
+                                    </div>
+                                    <h5 class="fw-bold" style="color: #134270;">Saturdays</h5>
+                                    <p class="mb-0 text-muted">10am - 6pm</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <i class="bi bi-calendar-heart fs-1" style="color: #E08245;"></i>
+                                    </div>
+                                    <h5 class="fw-bold" style="color: #134270;">Sundays</h5>
+                                    <p class="mb-0 text-muted">12pm - 5pm</p>
+                                </div>
+                            </div>
+                            <div class="alert mt-4 mb-0" style="background-color: rgba(120, 186, 220, 0.1); border: 1px solid rgba(120, 186, 220, 0.3);">
+                                <p class="mb-0 text-center" style="color: #134270;"><strong>Note:</strong> These are typical times. I'm flexible - tell me what works for you!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4" style="color: #134270;">Need More Information?</h2>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="pricing.html" class="btn btn-secondary-custom">View Pricing</a>
+                <a href="how-it-works.html" class="btn btn-secondary-custom">How It Works</a>
+                <a href="services.html" class="btn btn-secondary-custom">See Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #134270; color: white; padding: 3rem 0 1rem;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <h5 style="color: #E08245; font-weight: 900;">About CWC_UK</h5>
+                    <p style="color: rgba(255,255,255,0.8);">Student-to-student Computer Science tutoring for GCSE and A-Level students across the UK.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h5 style="color: #E08245; font-weight: 900;">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white" style="opacity: 0.8;">Home</a></li>
+                        <li><a href="services.html" class="text-white" style="opacity: 0.8;">Services</a></li>
+                        <li><a href="pricing.html" class="text-white" style="opacity: 0.8;">Pricing</a></li>
+                        <li><a href="contact.html" class="text-white" style="opacity: 0.8;">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 style="color: #E08245; font-weight: 900;">Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="services.html" class="text-white" style="opacity: 0.8;">GCSE Tutoring</a></li>
+                        <li><a href="services.html" class="text-white" style="opacity: 0.8;">A-Level Tutoring</a></li>
+                        <li><a href="services.html" class="text-white" style="opacity: 0.8;">Exam Prep</a></li>
+                        <li><a href="services.html" class="text-white" style="opacity: 0.8;">Coursework Help</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 style="color: #E08245; font-weight: 900;">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li style="color: rgba(255,255,255,0.8);"><i class="bi bi-envelope me-2"></i>contact@cwclearning.net</li>
+                        <li style="color: rgba(255,255,255,0.8);"><i class="bi bi-instagram me-2"></i>@codewithconfidence_uk</li>
+                        <li style="color: rgba(255,255,255,0.8);"><i class="bi bi-geo-alt me-2"></i>Online (UK-wide)</li>
+                        <li class="mt-2"><small style="color: rgba(255,255,255,0.6);">Response time: Within 24 hours</small></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2rem; padding-top: 1rem; text-align: center;">
+                <p class="mb-0" style="color: rgba(255,255,255,0.6);">&copy; 2026 CodeWithConfidence_UK. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

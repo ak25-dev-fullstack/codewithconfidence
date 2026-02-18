@@ -1,0 +1,647 @@
+<!-- how-it-works.html (Academic Premium • consistent header/nav/footer • no overlap • premium step cards) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>How It Works | Getting Started with CWC_UK</title>
+  <meta name="description" content="Getting started is easy! Learn how to book your first tutoring session. Free consultation, flexible scheduling, and a clear 4-step process.">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <!-- Your global CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Page-only premium step styling (keeps global CSS clean) -->
+  <style>
+    /* =========================
+       Academic Premium — How It Works
+       ========================= */
+
+    /* Tighter typography + academic feel */
+    .page-hero h1{ letter-spacing: -0.04em; }
+    .page-hero .lead{ max-width: 60ch; }
+
+    /* Step grid */
+    .how-steps{
+      display: grid;
+      gap: 28px;
+      position: relative;
+    }
+
+    /* Academic vertical guide (subtle timeline) */
+    .how-steps::before{
+      content:"";
+      position:absolute;
+      left: 34px;              /* aligns behind badges */
+      top: 18px;
+      bottom: 18px;
+      width: 2px;
+      background: linear-gradient(
+        180deg,
+        rgba(120,186,220,.00),
+        rgba(120,186,220,.35),
+        rgba(120,186,220,.00)
+      );
+      pointer-events:none;
+    }
+
+    /* Each step item */
+    .how-step{
+      position: relative;
+      padding-left: 0; /* no left rail */
+    }
+
+    /* Step card */
+    .how-step-card{
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--r-lg);
+      padding: 1.6rem 1.6rem 1.4rem;
+    }
+
+    /* Subtle academic corner motif */
+    .how-step-card::after{
+      content:"";
+      position:absolute;
+      right:-120px;
+      top:-120px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(120,186,220,.18), transparent 60%);
+      pointer-events:none;
+    }
+
+    /* Header row: badge + icon */
+    .how-step-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      position: relative;
+    }
+
+    /* Premium number badge (academic, squared, confident) */
+    .how-step-badge{
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      font-weight: 950;
+      font-size: 1.25rem;
+      color:#fff;
+
+      background: linear-gradient(135deg, var(--primary-blue), #0F355A);
+      box-shadow: 0 18px 38px rgba(19,66,112,.22);
+
+      /* sits over timeline line */
+      position: relative;
+      z-index: 2;
+    }
+
+    .how-step-badge::before{
+      content:"";
+      position:absolute;
+      inset: 8px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.28);
+      pointer-events:none;
+    }
+
+    .how-step-badge-accent{
+      background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-2));
+      box-shadow: 0 18px 38px rgba(224,130,69,.22);
+    }
+
+    /* Larger icon on the right (emoji) */
+    .how-step-icon{
+      font-size: 3.1rem;
+      line-height: 1;
+      opacity: .96;
+      filter: saturate(1.05);
+    }
+
+    /* Heading & text */
+    .how-step-card h3{
+      font-weight: 950;
+      letter-spacing: -0.02em;
+      margin-top: 1rem;
+      margin-bottom: .5rem;
+    }
+
+    .how-step-card p,
+    .how-step-card li{
+      color: rgba(19,66,112,.76);
+    }
+
+    /* Academic callout label */
+    .how-step-meta{
+      display:flex;
+      align-items:center;
+      gap: .5rem;
+      color: rgba(19,66,112,.68);
+      font-weight: 800;
+      font-size: .92rem;
+      margin-top: .25rem;
+    }
+    .how-step-meta i{ color: var(--light-blue); }
+
+    /* Lists spacing */
+    .how-step-card ul,
+    .how-step-card ol{
+      padding-left: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Cards on small screens: remove timeline line for cleanliness */
+    @media (max-width: 575.98px){
+      .how-steps::before{ display:none; }
+      .how-step-badge{ width: 60px; height: 60px; border-radius: 16px; }
+      .how-step-icon{ font-size: 2.7rem; }
+      .how-step-card{ padding: 1.4rem 1.25rem 1.2rem; }
+    }
+  </style>
+</head>
+
+<body class="site">
+
+  <!-- Top Header Bar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <i class="bi bi-mortarboard-fill"></i>
+        <span>GCSE & A-Level Computer Science • Online UK-wide</span>
+      </div>
+
+      <div class="topbar-right">
+        <a class="topbar-link" href="mailto:contact@cwclearning.net"><i class="bi bi-envelope"></i> contact@cwclearning.net</a>
+        <span class="topbar-sep">•</span>
+        <a class="topbar-link" href="#"><i class="bi bi-instagram"></i> @codewithconfidence_uk</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg cwc-nav">
+    <div class="container">
+      <a class="navbar-brand cwc-brand" href="index.html">
+        CODE<span>WITH</span>CONFIDENCE_UK
+      </a>
+
+      <button class="navbar-toggler cwc-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="how-it-works.html">How It Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-cta" href="contact.html"><i class="bi bi-calendar2-check me-2"></i>Book Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb breadcrumb-cwc">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">How It Works</li>
+        </ol>
+      </nav>
+
+      <div class="row align-items-end gy-4">
+        <div class="col-lg-8">
+          <span class="hero-badge"><i class="bi bi-lightning-charge me-2"></i>Free consultation • Flexible scheduling</span>
+          <h1 class="mt-3">Getting Started is Easy</h1>
+          <p class="lead mt-2 mb-0">From your first message to exam confidence — a simple, academic, results-focused process.</p>
+        </div>
+
+        <div class="col-lg-4 text-lg-end">
+          <a href="contact.html" class="btn btn-primary-custom btn-lg">
+            Book Free Consultation <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title mb-3">Your Journey to Success</h2>
+      <p class="section-subtitle mb-5">A clear 4-step process — structured, supportive, and focused on results.</p>
+
+      <div class="how-steps">
+
+        <!-- Step 1 -->
+        <div class="how-step">
+          <div class="card card-custom hover-lift how-step-card">
+            <div class="how-step-header">
+              <div class="how-step-badge">1</div>
+              <div class="how-step-icon">📩</div>
+            </div>
+
+            <h3 class="text-primary-custom">Get In Touch</h3>
+            <div class="how-step-meta"><i class="bi bi-clock"></i><span>Response within 24 hours</span></div>
+
+            <p class="mt-3 mb-3">Send a DM on Instagram or use the contact form on this website.</p>
+
+            <p class="mb-2"><strong>Tell me:</strong></p>
+            <ul class="mb-3">
+              <li>What year you're in (GCSE / A-Level)</li>
+              <li>Your exam board (OCR, AQA, Pearson)</li>
+              <li>Current grade and target grade</li>
+              <li>What you’re struggling with</li>
+            </ul>
+
+            <div class="alert alert-cwc mb-0">
+              <strong>Timeline:</strong> Reply within 24 hours (often faster).
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="how-step">
+          <div class="card card-custom hover-lift how-step-card">
+            <div class="how-step-header">
+              <div class="how-step-badge">2</div>
+              <div class="how-step-icon">💬</div>
+            </div>
+
+            <h3 class="text-primary-custom">Free Consultation (15–20 mins)</h3>
+            <div class="how-step-meta"><i class="bi bi-camera-video"></i><span>Quick call • no pressure</span></div>
+
+            <p class="mt-3 mb-3">A short video call to:</p>
+            <ul class="mb-3">
+              <li>Clarify your goals and priorities</li>
+              <li>Identify gaps and problem areas</li>
+              <li>Confirm we’re a good fit</li>
+              <li>Answer your questions</li>
+            </ul>
+
+            <p class="fw-bold text-orange mb-3">No commitment — just a focused, friendly chat.</p>
+
+            <div class="alert alert-cwc mb-0">
+              <strong>Timeline:</strong> Usually scheduled within 2–3 days.
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="how-step">
+          <div class="card card-custom hover-lift how-step-card">
+            <div class="how-step-header">
+              <div class="how-step-badge">3</div>
+              <div class="how-step-icon">📅</div>
+            </div>
+
+            <h3 class="text-primary-custom">Book Your Sessions</h3>
+            <div class="how-step-meta"><i class="bi bi-calendar2-week"></i><span>Flexible scheduling</span></div>
+
+            <p class="mt-3 mb-3"><strong>Choose what suits you:</strong></p>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-4">
+                <div class="option-tile">
+                  <div class="option-title">Single Session</div>
+                  <div class="option-sub">Pay-as-you-go</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="option-tile">
+                  <div class="option-title">5-Session Package</div>
+                  <div class="option-sub text-success">Small discount</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="option-tile">
+                  <div class="option-title">10-Session Package</div>
+                  <div class="option-sub text-success">Best value</div>
+                </div>
+              </div>
+            </div>
+
+            <ul class="mb-3">
+              <li>Pick times that fit <strong>your</strong> schedule</li>
+              <li>Secure payment via bank transfer or PayPal</li>
+            </ul>
+
+            <div class="alert alert-cwc mb-0">
+              <strong>Timeline:</strong> First session usually within a week.
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 (Featured) -->
+        <div class="how-step">
+          <div class="card card-custom hover-lift how-step-card" style="border:2px solid rgba(224,130,69,.45); box-shadow: 0 20px 40px rgba(224,130,69,.10);">
+            <div class="how-step-header">
+              <div class="how-step-badge how-step-badge-accent">4</div>
+              <div class="how-step-icon">🚀</div>
+            </div>
+
+            <h3 class="text-primary-custom">Start Learning</h3>
+            <div class="how-step-meta"><i class="bi bi-graph-up-arrow"></i><span>Progress you can feel</span></div>
+
+            <p class="mt-3 mb-2"><strong>Your first session:</strong></p>
+            <ol class="mb-3">
+              <li>Quick recap of your goals</li>
+              <li>Dive into your chosen topic</li>
+              <li>Interactive learning (not passive listening)</li>
+              <li>Practice exercises and exam-style questions</li>
+              <li>Homework/resources for between sessions</li>
+            </ol>
+
+            <p class="mb-2"><strong>After each session, you’ll get:</strong></p>
+            <ul class="mb-3">
+              <li>Clear summary notes</li>
+              <li>Practice problems matched to your level</li>
+              <li>Resources to build exam confidence</li>
+            </ul>
+
+            <div class="alert alert-cwc mb-0">
+              <strong>Timeline:</strong> Most students feel a real difference within 3–4 sessions.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Need -->
+  <section class="section bg-soft">
+    <div class="container">
+      <h2 class="section-title">What You’ll Need</h2>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="card card-custom p-4 hover-lift">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="need-item">
+                  <i class="bi bi-laptop text-orange"></i>
+                  <div><strong>Laptop/computer with webcam</strong></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="need-item">
+                  <i class="bi bi-wifi text-orange"></i>
+                  <div><strong>Stable internet connection</strong></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="need-item">
+                  <i class="bi bi-camera-video text-orange"></i>
+                  <div><strong>Zoom/Google Meet</strong> (I’ll send the link)</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="need-item">
+                  <i class="bi bi-book text-orange"></i>
+                  <div><strong>Your textbook/notes</strong> (if you have them)</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="need-item">
+                  <i class="bi bi-pencil text-orange"></i>
+                  <div><strong>Something to write with</strong></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="need-item">
+                  <i class="bi bi-display text-orange"></i>
+                  <div><strong>Optional:</strong> second screen for easier multitasking</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="alert alert-cwc mt-4 mb-0 text-center">
+              If you only have a laptop + internet, that’s enough — we’ll make it work.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="accordion accordion-cwc" id="howItWorksAccordion">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  How long are the sessions?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#howItWorksAccordion">
+                <div class="accordion-body">
+                  Typically 1 hour for GCSE and 1–1.5 hours for A-Level. We can adjust based on your needs.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  What if I need to reschedule?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#howItWorksAccordion">
+                <div class="accordion-body">
+                  No problem — just let me know at least 24 hours in advance and we’ll move it.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  Do you offer weekend sessions?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#howItWorksAccordion">
+                <div class="accordion-body">
+                  Yes — weekends and evenings are common. We’ll find a time that suits your schedule.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  Can I record the sessions?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#howItWorksAccordion">
+                <div class="accordion-body">
+                  Yes — recording is available on request, and I’ll share the link after the session.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                  What if we don’t click?
+                </button>
+              </h2>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#howItWorksAccordion">
+                <div class="accordion-body">
+                  The free consultation helps confirm fit. If you’re not happy after the first session, I’ll refund you.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                  How quickly will I see improvement?
+                </button>
+              </h2>
+              <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#howItWorksAccordion">
+                <div class="accordion-body">
+                  Most students feel better understanding within 2–3 sessions. Grade improvements usually appear after consistent work over 4–6 weeks.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Success Timeline -->
+  <section class="section bg-light-blue">
+    <div class="container">
+      <h2 class="section-title">Typical Success Timeline</h2>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-3">
+          <div class="card card-custom p-4 text-center h-100 hover-lift">
+            <h4 class="text-orange mb-3">Week 1–2</h4>
+            <p class="mb-0">Identify gaps, build foundations, start seeing concepts click.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-custom p-4 text-center h-100 hover-lift">
+            <h4 class="text-orange mb-3">Week 3–4</h4>
+            <p class="mb-0">Confidence grows, homework becomes easier, lessons make more sense.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-custom p-4 text-center h-100 hover-lift">
+            <h4 class="text-orange mb-3">Week 6–8</h4>
+            <p class="mb-0">Test scores improve, harder problems become manageable independently.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-custom p-4 text-center h-100 hover-lift">
+            <h4 class="text-orange mb-3">Exam Time</h4>
+            <p class="mb-0">Walking in confident, executing your plan, hitting your target grade.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-band text-center">
+    <div class="container">
+      <h2 class="mb-3 text-white">Ready to Get Started?</h2>
+      <p class="lead mb-4 text-white-85">Book your free consultation and take the first step to better grades.</p>
+      <a href="contact.html" class="btn btn-cta btn-lg">Book Free Consultation <i class="bi bi-arrow-right ms-2"></i></a>
+      <p class="mt-4 mb-0" style="color: rgba(255,255,255,.72);"><small>No credit card required • No obligation • 100% free</small></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="cwc-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="footer-brand">CODE<span>WITH</span>CONFIDENCE_UK</div>
+          <p class="footer-text mt-3">Student-to-student Computer Science tutoring for GCSE and A-Level students across the UK.</p>
+          <div class="footer-social mt-3">
+            <a class="footer-link" href="#"><i class="bi bi-instagram"></i></a>
+            <a class="footer-link" href="mailto:contact@cwclearning.net"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <h5 class="footer-title">Pages</h5>
+          <ul class="footer-list">
+            <li><a class="footer-link" href="index.html">Home</a></li>
+            <li><a class="footer-link" href="services.html">Services</a></li>
+            <li><a class="footer-link" href="pricing.html">Pricing</a></li>
+            <li><a class="footer-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <h5 class="footer-title">Services</h5>
+          <ul class="footer-list">
+            <li><a class="footer-link" href="services.html">GCSE Tutoring</a></li>
+            <li><a class="footer-link" href="services.html">A-Level Tutoring</a></li>
+            <li><a class="footer-link" href="services.html">Exam Prep</a></li>
+            <li><a class="footer-link" href="services.html">Coursework Help</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h5 class="footer-title">Contact</h5>
+          <ul class="footer-list">
+            <li class="footer-item"><i class="bi bi-envelope me-2"></i>contact@cwclearning.net</li>
+            <li class="footer-item"><i class="bi bi-instagram me-2"></i>@codewithconfidence_uk</li>
+            <li class="footer-item"><i class="bi bi-geo-alt me-2"></i>Online (UK-wide)</li>
+            <li class="footer-note mt-2">Response time: within 24 hours</li>
+          </ul>
+          <a href="contact.html" class="btn btn-cta mt-3 w-100"><i class="bi bi-calendar2-check me-2"></i>Book Free Consultation</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 CodeWithConfidence_UK. All rights reserved.</div>
+        <div class="footer-mini-links">
+          <a class="footer-link" href="contact.html">Book</a>
+          <span class="sep">•</span>
+          <a class="footer-link" href="pricing.html">Pricing</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating CTA -->
+  <a href="contact.html" class="floating-cta d-none d-md-block">
+    <i class="bi bi-calendar2-check me-2"></i>Book Now
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
