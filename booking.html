@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Session | CWC_UK</title>
+  <meta name="description" content="Book your free consultation or tutoring session with CWC_UK. GCSE and A-Level Computer Science tutoring online across the UK.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .payment-modal-content {
+      background: var(--beige-50);
+      border: 1px solid rgba(200,184,154,.5);
+      border-radius: var(--r-xl) !important;
+      box-shadow: var(--shadow);
+    }
+    .payment-method-btn {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1rem 1.1rem;
+      border-radius: var(--r);
+      background: var(--beige-100);
+      border: 1.5px solid rgba(200,184,154,.45);
+      text-decoration: none; color: var(--text);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+      cursor: pointer;
+    }
+    .payment-method-btn:hover {
+      transform: translateY(-2px); box-shadow: var(--shadow-soft);
+      border-color: rgba(200,184,154,.85); background: var(--beige-200); color: var(--text);
+    }
+    .pm-icon { width:48px; height:48px; border-radius:14px; display:grid; place-items:center; font-size:1.3rem; flex-shrink:0; }
+    .pm-icon.card   { background: linear-gradient(135deg, var(--navy-mid), var(--navy)); color:#fff; }
+    .pm-icon.paypal { background: linear-gradient(135deg, #003087, #009cde); color:#fff; }
+    .pm-icon.bank   { background: rgba(200,184,154,.35); color:var(--navy); border:1px solid rgba(200,184,154,.55); }
+    .pm-info { flex:1; display:flex; flex-direction:column; gap:.1rem; }
+    .pm-info strong { color:var(--navy); font-size:.95rem; }
+    .pm-info span   { color:var(--muted); font-size:.8rem; }
+    .pm-arrow       { color:var(--subtle); font-size:.85rem; }
+    .tier-pick-btn {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .75rem 1rem; border-radius: var(--r);
+      background: var(--beige-100); border: 1.5px solid rgba(200,184,154,.45);
+      cursor: pointer; transition: background .18s, border-color .18s, transform .18s;
+      width: 100%;
+    }
+    .tier-pick-btn:hover { background: var(--beige-200); border-color: rgba(200,184,154,.85); transform: translateY(-1px); }
+    .modal-backdrop { background-color: rgba(14,42,69,.5); }
+  </style>
+
+  <!-- Calendly -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+  <style>
+    .calendly-wrapper {
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      border: 1px solid rgba(200, 184, 154, 0.45);
+      box-shadow: var(--shadow);
+    }
+    .calendly-inline-widget {
+      min-width: 320px;
+      height: 700px;
+    }
+  </style>
+</head>
+
+<body class="site">
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <i class="bi bi-mortarboard-fill"></i>
+        <span>GCSE & A-Level Computer Science • Girls Only • Online UK-wide</span>
+      </div>
+      <div class="topbar-right">
+        <a class="topbar-link" href="mailto:contact@cwclearning.net"><i class="bi bi-envelope"></i> contact@cwclearning.net</a>
+        <span class="topbar-sep">•</span>
+        <a class="topbar-link" href="https://www.instagram.com/codewithconfidence_uk" target="_blank" rel="noopener"><i class="bi bi-instagram"></i> @codewithconfidence_uk</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top cwc-nav">
+    <div class="container">
+      <a class="navbar-brand cwc-brand" href="index.html">CODE<span>WITH</span>CONFIDENCE_UK</a>
+
+      <button class="navbar-toggler cwc-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="how-it-works.html">How It Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-cta" href="booking.html"><i class="bi bi-calendar2-check me-2"></i>Book Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb breadcrumb-cwc">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Book a Session</li>
+        </ol>
+      </nav>
+
+      <div class="row align-items-end gy-4">
+        <div class="col-lg-8">
+          <span class="hero-badge"><i class="bi bi-calendar2-check me-2"></i>Free first consultation • No commitment</span>
+          <h1 class="mt-3">Book a Session</h1>
+          <p class="lead mt-2 mb-0">Pick a time that works for you — I'll confirm within a few hours.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="contact.html" class="btn btn-secondary-custom btn-lg">
+            <i class="bi bi-chat-dots me-2"></i>Have a Question First?
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calendly + Info -->
+  <section class="section">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+
+        <!-- Calendar -->
+        <div class="col-lg-8">
+          <div class="calendly-wrapper">
+            <div
+              class="calendly-inline-widget"
+              data-url="https://calendly.com/contact-cwclearning?hide_gdpr_banner=1&primary_color=d97c3a"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4 d-flex flex-column gap-4">
+
+          <div class="card-custom p-4">
+            <h5 class="text-primary-custom mb-3" style="font-family:'Playfair Display',Georgia,serif; font-weight:800;">What to Expect</h5>
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+              <li class="d-flex gap-3 align-items-start">
+                <i class="bi bi-camera-video text-orange fs-5 flex-shrink-0 mt-1"></i>
+                <span style="color:var(--muted)">15–20 min video call via Zoom or Google Meet</span>
+              </li>
+              <li class="d-flex gap-3 align-items-start">
+                <i class="bi bi-chat-square-text text-orange fs-5 flex-shrink-0 mt-1"></i>
+                <span style="color:var(--muted)">We discuss your goals, exam board, and current level</span>
+              </li>
+              <li class="d-flex gap-3 align-items-start">
+                <i class="bi bi-check2-circle text-orange fs-5 flex-shrink-0 mt-1"></i>
+                <span style="color:var(--muted)">No pressure — just a friendly chat to see if we're a good fit</span>
+              </li>
+              <li class="d-flex gap-3 align-items-start">
+                <i class="bi bi-gift text-orange fs-5 flex-shrink-0 mt-1"></i>
+                <span style="color:var(--muted)">Completely free, no commitment required</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card-custom p-4">
+            <h5 class="text-primary-custom mb-1" style="font-family:'Playfair Display',Georgia,serif; font-weight:800;">Ready to Pay?</h5>
+            <p class="mb-3" style="color:var(--muted); font-size:.88rem;">Choose your package to select a payment method.</p>
+
+            <div class="d-flex flex-column gap-2">
+              <button class="tier-pick-btn pay-btn"
+                data-tier="Single Session" data-price="£25"
+                data-stripe="https://buy.stripe.com/bJe3cvbgX6XA3ho2X38Vi00"
+                data-paypal="https://www.paypal.com/ncp/payment/C72QT8VCFEYKN"
+                data-bs-toggle="modal" data-bs-target="#paymentModal">
+                <div class="text-start">
+                  <strong class="text-primary-custom d-block" style="font-size:.92rem;">Single Session</strong>
+                  <span style="color:var(--muted); font-size:.8rem;">£25 / hour</span>
+                </div>
+                <i class="bi bi-chevron-right" style="color:var(--subtle);"></i>
+              </button>
+
+              <button class="tier-pick-btn pay-btn"
+                data-tier="Starter Package" data-price="£115"
+                data-stripe="https://buy.stripe.com/9B69AT5WDgya4ls55b8Vi01"
+                data-paypal="https://www.paypal.com/ncp/payment/KQEBSURV7URZY"
+                data-bs-toggle="modal" data-bs-target="#paymentModal">
+                <div class="text-start">
+                  <strong class="text-primary-custom d-block" style="font-size:.92rem;">Starter Pack <span class="text-orange" style="font-size:.78rem;">★ Popular</span></strong>
+                  <span style="color:var(--muted); font-size:.8rem;">5 sessions — £115</span>
+                </div>
+                <i class="bi bi-chevron-right" style="color:var(--subtle);"></i>
+              </button>
+
+              <button class="tier-pick-btn pay-btn"
+                data-tier="Premium Package" data-price="£200"
+                data-stripe="https://buy.stripe.com/7sY9AT4Sz2HkcRY55b8Vi02"
+                data-paypal="https://www.paypal.com/ncp/payment/WLWR8Z692PKZY"
+                data-bs-toggle="modal" data-bs-target="#paymentModal">
+                <div class="text-start">
+                  <strong class="text-primary-custom d-block" style="font-size:.92rem;">Premium Pack</strong>
+                  <span style="color:var(--muted); font-size:.8rem;">10 sessions — £200</span>
+                </div>
+                <i class="bi bi-chevron-right" style="color:var(--subtle);"></i>
+              </button>
+            </div>
+
+            <a href="pricing.html" class="btn btn-secondary-custom w-100 mt-3">Full Pricing Details</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="cwc-footer">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="footer-brand">CODE<span>WITH</span>CONFIDENCE_UK</div>
+          <p class="footer-text mt-3">Student-to-student Computer Science tutoring for girls studying GCSE and A-Level across the UK.</p>
+          <div class="footer-social mt-3">
+            <a class="footer-link fs-5" href="https://www.instagram.com/codewithconfidence_uk" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+            <a class="footer-link fs-5" href="mailto:contact@cwclearning.net"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <h5 class="footer-title">Pages</h5>
+          <ul class="footer-list">
+            <li><a class="footer-link" href="index.html">Home</a></li>
+            <li><a class="footer-link" href="services.html">Services</a></li>
+            <li><a class="footer-link" href="pricing.html">Pricing</a></li>
+            <li><a class="footer-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <h5 class="footer-title">Services</h5>
+          <ul class="footer-list">
+            <li><a class="footer-link" href="services.html">GCSE Tutoring</a></li>
+            <li><a class="footer-link" href="services.html">A-Level Tutoring</a></li>
+            <li><a class="footer-link" href="services.html">Exam Prep</a></li>
+            <li><a class="footer-link" href="services.html">Coursework Help</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h5 class="footer-title">Contact</h5>
+          <ul class="footer-list">
+            <li class="footer-item"><i class="bi bi-envelope me-2"></i>contact@cwclearning.net</li>
+            <li class="footer-item"><i class="bi bi-instagram me-2"></i>@codewithconfidence_uk</li>
+            <li class="footer-item"><i class="bi bi-geo-alt me-2"></i>Online (UK-wide)</li>
+            <li class="footer-note mt-2">Response time: within 24 hours</li>
+          </ul>
+          <a href="booking.html" class="btn btn-cta mt-3 w-100"><i class="bi bi-calendar2-check me-2"></i>Book Free Consultation</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 CodeWithConfidence_UK. All rights reserved.</div>
+        <div class="footer-mini-links">
+          <a class="footer-link" href="booking.html">Book</a>
+          <span class="sep">•</span>
+          <a class="footer-link" href="pricing.html">Pricing</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating CTA -->
+  <a href="booking.html" class="floating-cta d-none d-md-block">
+    <i class="bi bi-calendar2-check me-2"></i>Book Now
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <!-- Payment Method Modal -->
+  <div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content payment-modal-content">
+
+        <div class="modal-header border-0 pb-0 pt-4 px-4">
+          <div>
+            <p class="mb-1" style="color:var(--muted); font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em;">Choose payment method</p>
+            <h5 class="modal-title text-primary-custom fw-bold" style="font-family:'Playfair Display',Georgia,serif;" id="modal-tier-name"></h5>
+          </div>
+          <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body px-4 pt-3 pb-4">
+          <div class="d-flex flex-column gap-3">
+
+            <a id="modal-stripe-btn" href="#" target="_blank" rel="noopener" class="payment-method-btn">
+              <div class="pm-icon card"><i class="bi bi-credit-card-2-front-fill"></i></div>
+              <div class="pm-info">
+                <strong>Card / Apple Pay</strong>
+                <span>Visa, Mastercard · Apple Pay · Google Pay</span>
+              </div>
+              <i class="bi bi-chevron-right pm-arrow"></i>
+            </a>
+
+            <a id="modal-paypal-btn" href="#" target="_blank" rel="noopener" class="payment-method-btn">
+              <div class="pm-icon paypal"><i class="bi bi-paypal"></i></div>
+              <div class="pm-info">
+                <strong>PayPal</strong>
+                <span>Pay with PayPal balance or card</span>
+              </div>
+              <i class="bi bi-chevron-right pm-arrow"></i>
+            </a>
+
+            <a href="contact.html" class="payment-method-btn" data-bs-dismiss="modal">
+              <div class="pm-icon bank"><i class="bi bi-bank2"></i></div>
+              <div class="pm-info">
+                <strong>Bank Transfer</strong>
+                <span>I'll send you the account details</span>
+              </div>
+              <i class="bi bi-chevron-right pm-arrow"></i>
+            </a>
+
+          </div>
+          <p class="text-center mt-4 mb-0" style="color:var(--subtle); font-size:.8rem;">
+            <i class="bi bi-lock-fill me-1"></i>Secure payment · Your details are protected
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.pay-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('modal-tier-name').textContent = btn.dataset.tier + ' — ' + btn.dataset.price;
+        document.getElementById('modal-stripe-btn').href = btn.dataset.stripe;
+        document.getElementById('modal-paypal-btn').href = btn.dataset.paypal;
+      });
+    });
+  </script>
+</body>
+</html>
